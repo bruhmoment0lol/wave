@@ -104,7 +104,7 @@ run `./gradlew cleanEclipse` or `./gradlew cleanIdea` depending on your IDE.
 
 ## Gradle Tasks
 
-Apache Wave requires Java 7 & Gradle 2.8+ to build.
+Apache Wave requires OpenJDK 8 (Java 7 is deprecated) & Gradle 2.8+ to build.
 
 Gradle tasks can be run by `./gradlew [task name]`
 
@@ -158,6 +158,7 @@ This will create a `project name`-sources.jar in each projects build/libs direct
 
 Note:
 
+- if Gradle nags about Java, make sure you have OpenJDK 8. It doesn't like newer Java versions, so stick with 8 and uninstall newer versions if need be.
 - if pst-`version`.jar is unable to be found run `./gradlew pst:jar` then retry.
 - if a jar is unable to be unzipped with wave:extractApi then delete the jar from your cache and try again.
     You may need to restart. If problem persists let the newsgroup know or create an issue on Jira.
@@ -171,7 +172,7 @@ Or on Windows by running
     Note: must be cd'ed into the root directory
 Or, you can run the server from the compiled classes with Gradle:
     gradle run
-The web client will be accessible by default at http://localhost:9898/.
+The web client will be accessible by default at http://localhost:9898/. (If running on a VPS make sure to open port 9898.)
 
 
 ## To learn more about Wave in a Box and Wave Federation Protocol:
